@@ -17,6 +17,7 @@ class FilterWidget extends StatefulWidget {
 
 class _FilterWidgetState extends State<FilterWidget> {
   String dropdownValue = 'Available';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -24,8 +25,8 @@ class _FilterWidgetState extends State<FilterWidget> {
       child: Scaffold(
         appBar: AppBar(
           title: Theme(
-            data: Theme.of(context).copyWith(
-                canvasColor: videoPlayerBackground.withOpacity(0.7)),
+            data: Theme.of(context)
+                .copyWith(canvasColor: videoPlayerBackground.withOpacity(0.7)),
             child: Container(
               width: MediaQuery.of(context).size.width * 0.2,
               child: DropdownButton<String>(
@@ -44,7 +45,11 @@ class _FilterWidgetState extends State<FilterWidget> {
                   return DropdownMenuItem<String>(
                     alignment: Alignment.center,
                     value: value,
-                    child: Container(child: Text(value, style: dropTextStyle,)),
+                    child: Container(
+                        child: Text(
+                      value,
+                      style: dropTextStyle,
+                    )),
                   );
                 }).toList(),
               ),
@@ -57,15 +62,13 @@ class _FilterWidgetState extends State<FilterWidget> {
             Container(
               width: MediaQuery.of(context).size.width * 0.15,
               color: Colors.blue,
-
               child: const Text('Hello'),
             ),
           ],
         ),
-        body:  SafeArea(
-          child: SingleChildScrollView(
-            child: Container()//,
-          ),
+        body: SafeArea(
+          child: SingleChildScrollView(child: Container() //,
+              ),
         ),
       ),
     );

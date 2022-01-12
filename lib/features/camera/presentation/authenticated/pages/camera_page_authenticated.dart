@@ -204,8 +204,8 @@ class _CameraPageAuthenticatedState extends State<CameraPageAuthenticated> {
                   Positioned(
                       right: 10,
                       bottom: 5,
-                      child: Text('Data from API updated at ' +
-                          data.toString()))
+                      child:
+                          Text('Data from API updated at ' + data.toString()))
                 ],
               );
             }

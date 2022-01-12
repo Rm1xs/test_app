@@ -84,16 +84,17 @@ class _LoginFormState extends State<LoginForm> {
                   onPrimary: Colors.white, // foreground
                 ),
                 onPressed: () {
-
-                  if(loginController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+                  if (loginController.text.isNotEmpty &&
+                      passwordController.text.isNotEmpty) {
                     sl<UserCubit>()
                         .addUser(loginController.text, passwordController.text);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const CameraPageAuthenticated()),
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const CameraPageAuthenticated()),
                     );
-                  }
-                  else{
+                  } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Fields empty!'),
                     ));
@@ -122,8 +123,7 @@ class _LoginFormState extends State<LoginForm> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const CameraPage()),
+                    MaterialPageRoute(builder: (context) => const CameraPage()),
                   );
                 },
                 child: const Text('LIVE VIDEO'),

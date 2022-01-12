@@ -13,8 +13,7 @@ class CameraPage extends StatelessWidget {
           builder: (BuildContext context, BoxConstraints constraints) {
             if (MediaQuery.of(context).orientation == Orientation.landscape) {
               return const CameraFormLandscape();
-            }
-            else {
+            } else {
               return const CameraFormPortrait();
             }
           },

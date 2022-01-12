@@ -11,35 +11,38 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return BlocProvider<UserCubit>(
-      create: (_) => sl<UserCubit>(),
-      child: Scaffold(
-        body: SafeArea(
-          child: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              if (constraints.maxWidth > 500 && MediaQuery.of(context).orientation == Orientation.portrait) {
-                return Padding(
-                    padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.2, right: MediaQuery.of(context).size.width * 0.2),
-                    child: const LoginForm()
-                );
-              }
-              else if (constraints.maxWidth < 500 && MediaQuery.of(context).orientation == Orientation.portrait){
-                return Padding(
-                    padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.1, right: MediaQuery.of(context).size.width * 0.1),
-                    child: const LoginForm()
-                );
-              }
-              else {
-                return Padding(
-                    padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.35, right: MediaQuery.of(context).size.width * 0.35),
-                    child: const LoginForm()
-                );
-              }
-            },
+        create: (_) => sl<UserCubit>(),
+        child: Scaffold(
+          body: SafeArea(
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                if (constraints.maxWidth > 500 &&
+                    MediaQuery.of(context).orientation ==
+                        Orientation.portrait) {
+                  return Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width * 0.2,
+                          right: MediaQuery.of(context).size.width * 0.2),
+                      child: const LoginForm());
+                } else if (constraints.maxWidth < 500 &&
+                    MediaQuery.of(context).orientation ==
+                        Orientation.portrait) {
+                  return Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width * 0.1,
+                          right: MediaQuery.of(context).size.width * 0.1),
+                      child: const LoginForm());
+                } else {
+                  return Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width * 0.35,
+                          right: MediaQuery.of(context).size.width * 0.35),
+                      child: const LoginForm());
+                }
+              },
+            ),
           ),
-        ),
-      )
-    );
+        ));
   }
 }

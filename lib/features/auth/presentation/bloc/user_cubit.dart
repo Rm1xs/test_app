@@ -10,10 +10,11 @@ class UserCubit extends Cubit<void> {
     await _auth.logInWithPassword(login, password);
   }
 
-  Future<User> check() async  {
-    return  await _auth.currentUser;
+  Future<User> check() async {
+    return await _auth.currentUser;
   }
-  Future<void> logOut() async  {
+
+  Future<void> logOut() async {
     await _auth.logOut();
   }
 }

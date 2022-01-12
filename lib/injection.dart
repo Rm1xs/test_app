@@ -22,7 +22,7 @@ Future<void> init() async {
   );
 
   sl.registerFactory(
-        () => FilterCubit(sl()),
+    () => FilterCubit(sl()),
   );
 
   // Use cases

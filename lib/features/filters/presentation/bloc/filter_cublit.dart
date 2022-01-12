@@ -14,30 +14,35 @@ class FilterCubit extends Cubit<void> {
     return await _filter.getFilters();
   }
 
-  int getLength(AsyncSnapshot<Filters> filter, String filterName){
-    if(filter.data!.cars!.where((element) => element.state == filterName.toLowerCase()).length != 0){
-      return filter.data!.cars!.where((element) => element.state == filterName.toLowerCase()).length;
-    }
-    else{
+  int getLength(AsyncSnapshot<Filters> filter, String filterName) {
+    if (filter.data!.cars!
+            .where((element) => element.state == filterName.toLowerCase())
+            .length !=
+        0) {
+      return filter.data!.cars!
+          .where((element) => element.state == filterName.toLowerCase())
+          .length;
+    } else {
       return filter.data!.cars!.length;
     }
   }
 
-  Iterable<Cars> getElement(AsyncSnapshot<Filters> filter, String filterName){
-    if(filter.data!.cars!.where((element) => element.state == filterName.toLowerCase()).isNotEmpty){
-      return filter.data!.cars!.where((element) => element.state == filterName.toLowerCase());
-    }
-    else{
+  Iterable<Cars> getElement(AsyncSnapshot<Filters> filter, String filterName) {
+    if (filter.data!.cars!
+        .where((element) => element.state == filterName.toLowerCase())
+        .isNotEmpty) {
+      return filter.data!.cars!
+          .where((element) => element.state == filterName.toLowerCase());
+    } else {
       return filter.data!.cars!;
     }
   }
 
-  saveLastUpdateTime(DateTime lastDate){
+  saveLastUpdateTime(DateTime lastDate) {
     date = lastDate;
   }
 
-  DateTime getLastUpdateTime(){
+  DateTime getLastUpdateTime() {
     return date;
   }
-
 }

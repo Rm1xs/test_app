@@ -27,10 +27,12 @@ class _FilterComponentState extends State<FilterComponent> {
   @override
   void initState() {
     data = sl<FilterCubit>().getFilters();
-    timer = Timer.periodic(const Duration(seconds: 10), (Timer t) => updateList());
+    timer =
+        Timer.periodic(const Duration(seconds: 10), (Timer t) => updateList());
     super.initState();
   }
-  void updateList(){
+
+  void updateList() {
     setState(() {
       data = sl<FilterCubit>().getFilters();
 
@@ -84,22 +86,42 @@ class _FilterComponentState extends State<FilterComponent> {
                                         padding: const EdgeInsets.all(8.0),
                                         child: Form(
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: <Widget>[
-                                              Container(width: MediaQuery.of(context).size.width * 0.4,),
+                                              Container(
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.4,
+                                              ),
                                               FittedBox(
                                                 fit: BoxFit.fitWidth,
                                                 child: Text(
-                                                  'Status: ' + cars.state.toString(),
-                                                  style: const TextStyle(fontSize: 16, color: appBarVideoPlayer),
+                                                  'Status: ' +
+                                                      cars.state.toString(),
+                                                  style: const TextStyle(
+                                                      fontSize: 16,
+                                                      color: appBarVideoPlayer),
                                                 ),
                                               ),
                                               FittedBox(
                                                 fit: BoxFit.fitWidth,
                                                 child: Text(
-                                                  dt.hour.toString() + ':' + dt.minute.toString() + ':' + dt.second.toString() + ',' + dt.day.toString() + '.' + dt.month.toString() + '.' +
+                                                  dt.hour.toString() +
+                                                      ':' +
+                                                      dt.minute.toString() +
+                                                      ':' +
+                                                      dt.second.toString() +
+                                                      ',' +
+                                                      dt.day.toString() +
+                                                      '.' +
+                                                      dt.month.toString() +
+                                                      '.' +
                                                       dt.year.toString(),
-                                                  style: const TextStyle(fontSize: 16, color: appBarVideoPlayer),
+                                                  style: const TextStyle(
+                                                      fontSize: 16,
+                                                      color: appBarVideoPlayer),
                                                 ),
                                               ),
                                             ],
@@ -107,7 +129,17 @@ class _FilterComponentState extends State<FilterComponent> {
                                         ),
                                       ),
                                       actions: [
-                                        TextButton(onPressed: () => {Navigator.of(context, rootNavigator: true).pop()}, child: Text('Close', style: TextStyle(color: appBarVideoPlayer),))
+                                        TextButton(
+                                            onPressed: () => {
+                                                  Navigator.of(context,
+                                                          rootNavigator: true)
+                                                      .pop()
+                                                },
+                                            child: Text(
+                                              'Close',
+                                              style: TextStyle(
+                                                  color: appBarVideoPlayer),
+                                            ))
                                       ],
                                     );
                                   })
@@ -129,7 +161,16 @@ class _FilterComponentState extends State<FilterComponent> {
                                     child: FittedBox(
                                       fit: BoxFit.fitWidth,
                                       child: Text(
-                                        dt.hour.toString() + ':' + dt.minute.toString() + ':' + dt.second.toString() + ',' + dt.day.toString() + '.' + dt.month.toString() + '.' +
+                                        dt.hour.toString() +
+                                            ':' +
+                                            dt.minute.toString() +
+                                            ':' +
+                                            dt.second.toString() +
+                                            ',' +
+                                            dt.day.toString() +
+                                            '.' +
+                                            dt.month.toString() +
+                                            '.' +
                                             dt.year.toString(),
                                         style: TextStyle(fontSize: 12),
                                       ),
@@ -156,22 +197,42 @@ class _FilterComponentState extends State<FilterComponent> {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Form(
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: <Widget>[
-                                            Container(width: MediaQuery.of(context).size.width * 0.4,),
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.4,
+                                            ),
                                             FittedBox(
                                               fit: BoxFit.fitWidth,
                                               child: Text(
-                                                'Status: ' + cars.state.toString(),
-                                                style: const TextStyle(fontSize: 16, color: appBarVideoPlayer),
+                                                'Status: ' +
+                                                    cars.state.toString(),
+                                                style: const TextStyle(
+                                                    fontSize: 16,
+                                                    color: appBarVideoPlayer),
                                               ),
                                             ),
                                             FittedBox(
                                               fit: BoxFit.fitWidth,
                                               child: Text(
-                                                dt.hour.toString() + ':' + dt.minute.toString() + ':' + dt.second.toString() + ',' + dt.day.toString() + '.' + dt.month.toString() + '.' +
+                                                dt.hour.toString() +
+                                                    ':' +
+                                                    dt.minute.toString() +
+                                                    ':' +
+                                                    dt.second.toString() +
+                                                    ',' +
+                                                    dt.day.toString() +
+                                                    '.' +
+                                                    dt.month.toString() +
+                                                    '.' +
                                                     dt.year.toString(),
-                                                style: const TextStyle(fontSize: 16, color: appBarVideoPlayer),
+                                                style: const TextStyle(
+                                                    fontSize: 16,
+                                                    color: appBarVideoPlayer),
                                               ),
                                             ),
                                           ],
@@ -179,7 +240,17 @@ class _FilterComponentState extends State<FilterComponent> {
                                       ),
                                     ),
                                     actions: [
-                                      TextButton(onPressed: () => {Navigator.of(context, rootNavigator: true).pop()}, child: Text('Close', style: TextStyle(color: appBarVideoPlayer),))
+                                      TextButton(
+                                          onPressed: () => {
+                                                Navigator.of(context,
+                                                        rootNavigator: true)
+                                                    .pop()
+                                              },
+                                          child: Text(
+                                            'Close',
+                                            style: TextStyle(
+                                                color: appBarVideoPlayer),
+                                          ))
                                     ],
                                   );
                                 })
@@ -205,7 +276,16 @@ class _FilterComponentState extends State<FilterComponent> {
                                     right: 5,
                                     bottom: 5,
                                     child: Text(
-                                      dt.hour.toString() + ':' + dt.minute.toString() + ':' + dt.second.toString() + ',' + dt.day.toString() + '.' + dt.month.toString() + '.' +
+                                      dt.hour.toString() +
+                                          ':' +
+                                          dt.minute.toString() +
+                                          ':' +
+                                          dt.second.toString() +
+                                          ',' +
+                                          dt.day.toString() +
+                                          '.' +
+                                          dt.month.toString() +
+                                          '.' +
                                           dt.year.toString(),
                                       style: TextStyle(fontSize: 12),
                                     ),
@@ -231,22 +311,42 @@ class _FilterComponentState extends State<FilterComponent> {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Form(
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: <Widget>[
-                                            Container(width: MediaQuery.of(context).size.width * 0.4,),
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.4,
+                                            ),
                                             FittedBox(
                                               fit: BoxFit.fitWidth,
                                               child: Text(
-                                                'Status: ' + cars.state.toString(),
-                                                style: const TextStyle(fontSize: 16, color: appBarVideoPlayer),
+                                                'Status: ' +
+                                                    cars.state.toString(),
+                                                style: const TextStyle(
+                                                    fontSize: 16,
+                                                    color: appBarVideoPlayer),
                                               ),
                                             ),
                                             FittedBox(
                                               fit: BoxFit.fitWidth,
                                               child: Text(
-                                                dt.hour.toString() + ':' + dt.minute.toString() + ':' + dt.second.toString() + ',' + dt.day.toString() + '.' + dt.month.toString() + '.' +
+                                                dt.hour.toString() +
+                                                    ':' +
+                                                    dt.minute.toString() +
+                                                    ':' +
+                                                    dt.second.toString() +
+                                                    ',' +
+                                                    dt.day.toString() +
+                                                    '.' +
+                                                    dt.month.toString() +
+                                                    '.' +
                                                     dt.year.toString(),
-                                                style: const TextStyle(fontSize: 16, color: appBarVideoPlayer),
+                                                style: const TextStyle(
+                                                    fontSize: 16,
+                                                    color: appBarVideoPlayer),
                                               ),
                                             ),
                                           ],
@@ -254,7 +354,17 @@ class _FilterComponentState extends State<FilterComponent> {
                                       ),
                                     ),
                                     actions: [
-                                      TextButton(onPressed: () => {Navigator.of(context, rootNavigator: true).pop()}, child: Text('Close', style: TextStyle(color: appBarVideoPlayer),))
+                                      TextButton(
+                                          onPressed: () => {
+                                                Navigator.of(context,
+                                                        rootNavigator: true)
+                                                    .pop()
+                                              },
+                                          child: Text(
+                                            'Close',
+                                            style: TextStyle(
+                                                color: appBarVideoPlayer),
+                                          ))
                                     ],
                                   );
                                 })
@@ -280,7 +390,16 @@ class _FilterComponentState extends State<FilterComponent> {
                                     right: 5,
                                     bottom: 5,
                                     child: Text(
-                                      dt.hour.toString() + ':' + dt.minute.toString() + ':' + dt.second.toString() + ',' + dt.day.toString() + '.' + dt.month.toString() + '.' +
+                                      dt.hour.toString() +
+                                          ':' +
+                                          dt.minute.toString() +
+                                          ':' +
+                                          dt.second.toString() +
+                                          ',' +
+                                          dt.day.toString() +
+                                          '.' +
+                                          dt.month.toString() +
+                                          '.' +
                                           dt.year.toString(),
                                       style: TextStyle(fontSize: 12),
                                     ),
@@ -299,6 +418,7 @@ class _FilterComponentState extends State<FilterComponent> {
       },
     );
   }
+
   @override
   void dispose() {
     timer?.cancel();

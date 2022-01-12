@@ -18,14 +18,16 @@ class _CameraPageState extends State<CameraFormLandscape> {
   @override
   void initState() {
     _cameraFront = VideoPlayerController.network(
-        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
+        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
       ..initialize().then((_) {
         setState(() {});
       });
     _cameraFront.play();
 
     _backFront = VideoPlayerController.network(
-        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
+        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
       ..initialize().then((_) {
         setState(() {});
       });

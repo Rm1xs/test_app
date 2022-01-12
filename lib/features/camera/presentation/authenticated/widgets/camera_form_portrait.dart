@@ -52,14 +52,14 @@ class _CameraFormState extends State<CameraFormPortrait> {
           width: MediaQuery.of(context).size.width * 0.75,
           child: widget.camera.value.isInitialized
               ? InkWell(
-            onTap: () => widget.camera.value.isPlaying
-                ? widget.camera.pause()
-                : widget.camera.play(),
-            child: AspectRatio(
-              aspectRatio: widget.camera.value.aspectRatio,
-              child: VideoPlayer(widget.camera),
-            ),
-          )
+                  onTap: () => widget.camera.value.isPlaying
+                      ? widget.camera.pause()
+                      : widget.camera.play(),
+                  child: AspectRatio(
+                    aspectRatio: widget.camera.value.aspectRatio,
+                    child: VideoPlayer(widget.camera),
+                  ),
+                )
               : const Center(child: CircularProgressIndicator()),
         )
       ],
